@@ -374,6 +374,7 @@ class _CachedEvaluator:
             g=g,
             tool_ids=tool_ids,
             journey_state_proposition=True,
+            properties_proposition=False,
         )
 
     async def evaluate_guideline(
@@ -395,6 +396,7 @@ class _CachedEvaluator:
         tool_ids: Sequence[ToolId] = [],
         action_proposition: bool = True,
         journey_state_proposition: bool = False,
+        properties_proposition: bool = True,
     ) -> _CachedEvaluator.GuidelineEvaluation:
         # First check if we have a cached evaluation for this guideline
         _hash = self._hash_guideline_evaluation_request(
@@ -430,7 +432,7 @@ class _CachedEvaluator:
                         coherence_check=False,  # Legacy and will be removed in the future
                         connection_proposition=False,  # Legacy and will be removed in the future
                         action_proposition=action_proposition,
-                        properties_proposition=True,
+                        properties_proposition=properties_proposition,
                         journey_node_proposition=journey_state_proposition,
                     ),
                 )
