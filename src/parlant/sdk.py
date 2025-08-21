@@ -289,19 +289,29 @@ class NLPServices:
             raise SDKError(error)
 
         return GeminiService(container[Logger])
-    
+
     @staticmethod
     def ollama(container: Container) -> NLPService:
         """Creates a Ollama NLPService instance using the provided container."""
         from parlant.adapters.nlp.ollama_service import OllamaService
-        
+
         if error := OllamaService.verify_environment():
             raise SDKError(error)
-        
+
         if err := OllamaService.verify_models():
             raise SDKError(err)
-        
+
         return OllamaService(container[Logger])
+
+    @staticmethod
+    def litellm(container: Container) -> NLPService:
+        """Creates a Litellm NLPService instance using the provided container."""
+        from parlant.adapters.nlp.litellm_service import LiteLLMService
+
+        if error := LiteLLMService.verify_environment():
+            raise SDKError(error)
+
+        return LiteLLMService(container[Logger])
 
 
 class _CachedGuidelineEvaluation(TypedDict, total=False):
