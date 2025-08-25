@@ -291,13 +291,23 @@ class NLPServices:
         return GeminiService(container[Logger])
 
     @staticmethod
+    def litellm(container: Container) -> NLPService:
+        """Creates a Litellm NLPService instance using the provided container."""
+        from parlant.adapters.nlp.litellm_service import LiteLLMService
+
+        if error := LiteLLMService.verify_environment():
+            raise SDKError(error)
+
+        return LiteLLMService(container[Logger])
+
+    @staticmethod
     def vertex(container: Container) -> NLPService:
         """Creates a Vertex NLPService instance using the provided container."""
         from parlant.adapters.nlp.vertex_service import VertexAIService
-        
+
         if error := VertexAIService.verify_environment():
             raise SDKError(error)
-        
+
         if err := VertexAIService.validate_adc():
             raise SDKError(err)
 
@@ -1295,6 +1305,15 @@ class Journey:
             _server=self._server,
             _container=self._container,
         )
+
+    async def create_observation(
+        self,
+        condition: str,
+        canned_responses: Sequence[CannedResponseId] = [],
+    ) -> Guideline:
+        """A shorthand for creating an observational guideline with the specified condition."""
+
+        return await self.create_guideline(condition=condition, canned_responses=canned_responses)
 
     async def attach_tool(
         self,
