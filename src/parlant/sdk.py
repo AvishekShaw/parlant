@@ -291,16 +291,6 @@ class NLPServices:
         return GeminiService(container[Logger])
 
     @staticmethod
-    def litellm(container: Container) -> NLPService:
-        """Creates a Litellm NLPService instance using the provided container."""
-        from parlant.adapters.nlp.litellm_service import LiteLLMService
-
-        if error := LiteLLMService.verify_environment():
-            raise SDKError(error)
-
-        return LiteLLMService(container[Logger])
-
-    @staticmethod
     def vertex(container: Container) -> NLPService:
         """Creates a Vertex NLPService instance using the provided container."""
         from parlant.adapters.nlp.vertex_service import VertexAIService
