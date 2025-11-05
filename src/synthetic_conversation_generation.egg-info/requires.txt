@@ -1,0 +1,6 @@
+anthropic
+jupyter>=1.1.1
+jupyterlab-vim>=0.16.0
+lab>=8.3
+openai
+pyyaml
