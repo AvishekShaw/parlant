@@ -1,0 +1,351 @@
+users:
+# Elder Customer Type (7 personas)
+- name: Margaret Chen
+  customer_type: Elder
+  description: Margaret is a 72-year-old retired librarian living in suburban Phoenix.
+    She recently received a call from someone claiming to be from "tech support" and
+    provided her card information. She's worried about fraudulent charges appearing
+    on her Chase Freedom card.
+  personality: Anxious and apologetic, feels embarrassed about falling for a scam.
+    Values clear explanations and reassurance. Polite and grateful for help but worried
+    about being judged.
+  scenario: "Margaret noticed a $299 charge from \"Tech Support Pro\" that she authorized
+    during a phone call, but now suspects it was a scam. She wants to dispute the charge
+    and is worried about additional fraudulent activity."
+  dispute_reason: fraud
+  summary: Elderly scam victim needs fraud help
+
+- name: Robert Williams
+  customer_type: Elder
+  description: Robert is a 68-year-old retired postal worker in rural Ohio. He signed
+    up for a "free trial" of vitamins advertised on TV three months ago, but the company
+    has been charging his card monthly without authorization.
+  personality: Direct and matter-of-fact, slightly frustrated by recurring charges.
+    Values straightforward communication and practical solutions. Skeptical of "fine print."
+  scenario: "Robert sees monthly charges of $79.95 from \"VitaLife Supplements\" on
+    his Chase Sapphire card. He cancelled after the trial but charges continue. He
+    wants to dispute all charges since the trial ended."
+  dispute_reason: unauthorized_recurring
+  summary: Retiree fighting unwanted subscriptions
+
+- name: Dorothy Anderson
+  customer_type: Elder
+  description: Dorothy is a 75-year-old widow living on fixed income in Florida. She
+    ordered medication online but received a completely different product. The seller
+    won't respond to her emails.
+  personality: Patient but persistent, values fairness and honesty. Speaks slowly
+    and appreciates step-by-step guidance. Worried about losing money on fixed budget.
+  scenario: "Dorothy paid $145 to an online pharmacy for prescription refills but received
+    counterfeit vitamins instead. She tried contacting the merchant but they've gone
+    silent. She needs to dispute the charge on her Chase Freedom Unlimited."
+  dispute_reason: goods_not_as_described
+  summary: Senior disputes counterfeit medication purchase
+
+- name: Harold Thompson
+  customer_type: Elder
+  description: Harold is a 70-year-old retired teacher who was double-charged at a
+    restaurant when the first payment didn't seem to go through. He noticed both charges
+    posted to his account several days later.
+  personality: Calm and reasonable, uncomfortable with confrontation. Prefers polite
+    resolution and trusts the bank to help. Detail-oriented about dates and amounts.
+  scenario: "Harold was charged twice ($87.50 each time) at Olive Garden on March
+    15th. The waiter said the first swipe failed, but both charges appeared on his
+    Chase Slate card. He wants to dispute the duplicate charge."
+  dispute_reason: duplicate_charge
+  summary: Retired teacher reports duplicate restaurant charge
+
+- name: Patricia Martinez
+  customer_type: Elder
+  description: Patricia is a 69-year-old grandmother who purchased tickets to her
+    grandson's college graduation ceremony online. The event was cancelled but the
+    ticket vendor refuses to issue a refund.
+  personality: Firm but polite, protective of her family. Values fairness and follows
+    proper procedures. Disappointed by poor customer service.
+  scenario: "Patricia paid $320 for graduation ceremony tickets through TicketHub.
+    The university cancelled the event due to weather, but TicketHub only offered store
+    credit instead of the refund their policy promised. She wants to dispute on her
+    Chase Sapphire Preferred."
+  dispute_reason: services_not_received
+  summary: Grandmother disputes cancelled event refusal
+
+- name: George Kim
+  customer_type: Elder
+  description: George is a 73-year-old retiree who booked a hotel through a third-party
+    website. When he arrived, the hotel had no record of his reservation but his card
+    was charged anyway.
+  personality: Frustrated but controlled, values documentation and proof. Tech-savvy
+    for his age and keeps email confirmations. Expects businesses to honor commitments.
+  scenario: "George booked a $450 hotel stay through BudgetStays.com for his anniversary
+    trip. The hotel had no reservation when he arrived and he had to book elsewhere.
+    BudgetStays charged his Chase Freedom but won't refund. He has the confirmation email."
+  dispute_reason: services_not_received
+  summary: Retiree disputes phantom hotel reservation
+
+- name: Helen Rodriguez
+  customer_type: Elder
+  description: Helen is a 71-year-old retired nurse who ordered a walking aid from
+    an online medical supply store. The item never arrived despite multiple promises
+    from the seller.
+  personality: Patient and understanding but reaching her limit. Healthcare background
+    makes her detail-oriented. Keeps thorough records of communications.
+  scenario: "Helen ordered a $189 mobility walker from MediSupplyDirect two months
+    ago. Despite three promises that it shipped, tracking shows no movement and she
+    never received it. The seller stopped responding. She wants to dispute the charge
+    on her Chase Freedom Flex."
+  dispute_reason: item_not_received
+  summary: Retired nurse disputes undelivered medical equipment
+
+# Millennial Customer Type (7 personas)
+- name: Jessica Torres
+  customer_type: Millenial
+  description: Jessica is a 28-year-old marketing coordinator who forgot about a streaming
+    service trial and got charged for six months without realizing it. She rarely
+    checks her statements.
+  personality: Casually apologetic and slightly embarrassed. Fast-paced communicator
+    who prefers quick solutions. Acknowledges partial responsibility but seeks help anyway.
+  scenario: "Jessica signed up for PremiumFlix free trial 7 months ago and forgot
+    to cancel. She just noticed six charges of $14.99 on her Chase Sapphire. She never
+    used the service after the trial and wants to dispute at least some charges."
+  dispute_reason: forgotten_subscription
+  summary: Young professional disputes forgotten streaming charges
+
+- name: Marcus Johnson
+  customer_type: Millenial
+  description: Marcus is a 31-year-old software developer who purchased a high-end
+    gaming laptop online. The item arrived defective and the seller is ignoring his
+    return requests.
+  personality: Tech-literate and direct, expects efficient problem-solving. Frustrated
+    by poor customer service. Provides detailed technical descriptions of issues.
+  scenario: "Marcus bought a $1,899 gaming laptop from TechDealsNow. It arrived with
+    a faulty GPU and overheating issues. He contacted the seller three times for a
+    return but they've ghosted him. He wants to dispute the charge on his Chase Freedom
+    Unlimited."
+  dispute_reason: defective_product
+  summary: Developer disputes defective laptop purchase
+
+- name: Emily Chang
+  customer_type: Millenial
+  description: Emily is a 26-year-old social media manager who bought concert tickets
+    from a reseller. The tickets turned out to be fake and she was denied entry at
+    the venue.
+  personality: Energetic and expressive, upset about missing the event. Knows her
+    consumer rights and isn't afraid to advocate for herself. Wants quick resolution.
+  scenario: "Emily paid $380 to TicketResellPro for Taylor Swift concert tickets.
+    When she arrived at the venue, security said the tickets were fraudulent. She tried
+    contacting the seller but their website is now down. She wants to dispute on her
+    Chase Sapphire Preferred."
+  dispute_reason: fraudulent_tickets
+  summary: Social media manager got fake concert tickets
+
+- name: David Patel
+  customer_type: Millenial
+  description: David is a 29-year-old accountant who ordered customized business cards
+    for his side consulting work. The print quality was terrible and colors were completely
+    wrong.
+  personality: Analytical and detail-focused, has photographic evidence of quality
+    issues. Professional and courteous but expects standards to be met. Tried resolving
+    directly first.
+  scenario: "David ordered $125 worth of premium business cards from PrintPerfect.
+    They arrived with blurry text and wrong colors despite his exact specifications.
+    The company refused to reprint or refund. He wants to dispute the charge on his
+    Chase Ink Business."
+  dispute_reason: quality_not_as_promised
+  summary: Accountant disputes poor quality business cards
+
+- name: Rachel Kim
+  customer_type: Millenial
+  description: Rachel is a 27-year-old yoga instructor who signed up for a fitness
+    app with a promised cancel-anytime policy. When she tried to cancel, they made
+    it impossible and kept charging her.
+  personality: Health-conscious and mindful, but assertive about unfair practices.
+    Values transparency and ethical business. Frustrated by manipulative cancellation
+    processes.
+  scenario: "Rachel subscribed to FitLifePro for $29.99/month with advertised easy
+    cancellation. When she tried to cancel after 2 months, the app had no cancel button
+    and customer service was unreachable. Three more charges appeared on her Chase
+    Freedom. She wants to dispute them."
+  dispute_reason: impossible_cancellation
+  summary: Yoga instructor trapped in deceptive subscription
+
+- name: Brandon Lee
+  customer_type: Millenial
+  description: Brandon is a 30-year-old graphic designer who purchased design software
+    that was advertised as a one-time purchase but turned into a recurring subscription
+    without clear disclosure.
+  personality: Creative and observant, feels deceived by bait-and-switch tactics.
+    Reviews terms carefully and noticed the discrepancy. Wants accountability from vendors.
+  scenario: "Brandon paid $199 for 'DesignStudio Pro - Lifetime License' but got charged
+    another $199 six months later. The seller claims it's an annual fee buried in fine
+    print, contradicting the marketing. He wants to dispute the second charge on his
+    Chase Sapphire."
+  dispute_reason: misleading_billing
+  summary: Designer disputes misleading software subscription
+
+- name: Sophia Gonzalez
+  customer_type: Millenial
+  description: Sophia is a 25-year-old graduate student who ordered textbooks online
+    for the semester. She received empty boxes and the seller claims they're not responsible.
+  personality: Budget-conscious student, stressed about expenses. Articulate and prepared
+    with evidence (photos, emails). Disappointed by dishonest sellers.
+  scenario: "Sophia ordered $340 worth of required textbooks from CheapTextbooks.com.
+    She received three empty priority mail boxes. The seller says to file a claim with
+    USPS, but shipping insurance was supposed to be included. She needs to dispute
+    on her Chase Freedom Student."
+  dispute_reason: empty_package_scam
+  summary: Grad student received empty textbook boxes
+
+# Small Business Owner Customer Type (6 personas)
+- name: Michael Okonkwo
+  customer_type: Small Business Owner
+  description: Michael is a 45-year-old owner of a small catering business. His supplier
+    charged him for premium ingredients but delivered cheaper substitutes, affecting
+    an important event he catered.
+  personality: Professional and detail-oriented about quality, reputation is everything.
+    Frustrated by vendor dishonesty that put his business at risk. Keeps meticulous records.
+  scenario: "Michael ordered $850 of premium organic vegetables from FreshFarmSupply
+    for a high-profile wedding. They delivered conventional produce instead, violating
+    his contract with the client. The supplier refuses to refund the price difference.
+    He wants to dispute the full amount on his Chase Ink Business Preferred."
+  dispute_reason: bait_and_switch
+  summary: Caterer disputes inferior vendor substitution
+
+- name: Linda Wu
+  customer_type: Small Business Owner
+  description: Linda is a 38-year-old boutique owner who paid for a bulk order of
+    inventory that arrived three months late, missing her entire holiday sales season.
+  personality: Assertive and business-minded, understands contract terms. Angry about
+    lost revenue opportunity. Communicates in clear, professional terms.
+  scenario: "Linda paid $2,340 for holiday inventory from WholesaleFashion Hub, promised
+    delivery by October 1st for Christmas sales. Items arrived January 15th, completely
+    missing the season. The vendor won't refund despite late delivery clause. She wants
+    to dispute on her Chase Ink Business Cash."
+  dispute_reason: breach_of_contract
+  summary: Boutique owner disputes extremely late inventory
+
+- name: James Patterson
+  customer_type: Small Business Owner
+  description: James is a 52-year-old contractor who paid a supplier for building
+    materials that were supposed to be commercial-grade but arrived as residential-grade,
+    failing inspection.
+  personality: No-nonsense and experienced, knows industry standards. Frustrated by
+    vendors cutting corners. Values accountability and proper specifications.
+  scenario: "James ordered $1,680 of commercial-grade electrical components from BuildSupplyPro
+    for a licensed job. Residential-grade items arrived instead, failing code inspection.
+    The supplier claims they're 'equivalent' but they're not certified. He wants to
+    dispute on his Chase Ink Business Unlimited."
+  dispute_reason: wrong_grade_materials
+  summary: Contractor disputes non-compliant materials
+
+- name: Priya Sharma
+  customer_type: Small Business Owner
+  description: Priya is a 34-year-old owner of a digital marketing agency. She paid
+    for a business software suite that was supposed to support 10 users but only allows
+    3, with vendor demanding upgrade fees.
+  personality: Tech-savvy and precise about specifications. Feels misled by deceptive
+    product descriptions. Documents everything in writing.
+  scenario: "Priya purchased a $1,200 'Team Plan for up to 10 users' from MarketingSoft
+    Pro. After payment, she discovered it only supports 3 users and requires $800 upgrade
+    for 10 users. The listing clearly said 10. The vendor refuses to honor the original
+    terms. Disputing on Chase Ink Business Preferred."
+  dispute_reason: false_advertising
+  summary: Agency owner disputes misleading software limits
+
+- name: Carlos Mendez
+  customer_type: Small Business Owner
+  description: Carlos is a 41-year-old restaurant owner who hired an equipment repair
+    service. They charged for repairs but the equipment broke again within days, and
+    they're demanding more money.
+  personality: Hardworking and fair-minded, but won't tolerate being taken advantage
+    of. Straightforward communicator. Concerned about impact on business operations.
+  scenario: "Carlos paid $680 to RestaurantRepairPro to fix his commercial refrigerator
+    with 90-day warranty. It broke again after 5 days and they're claiming it's a different
+    issue requiring new charges. He believes they didn't fix it properly the first
+    time. Wants to dispute on his Chase Ink Cash."
+  dispute_reason: inadequate_service
+  summary: Restaurant owner disputes shoddy repair work
+
+- name: Amanda Foster
+  customer_type: Small Business Owner
+  description: Amanda is a 36-year-old owner of a pet grooming salon who paid for
+    professional website development. The developer delivered a barely functional site
+    and disappeared.
+  personality: Patient but firm, tried extensively to work with vendor first. Disappointed
+    by unprofessional service. Has clear documentation of agreed deliverables vs what
+    was provided.
+  scenario: "Amanda paid WebDesignExperts $1,950 for a professional booking website
+    for her grooming business. They delivered a template site with broken forms and
+    wrong information, then stopped responding to revision requests. She can't use
+    it for business. Disputing on Chase Ink Business Preferred."
+  dispute_reason: services_not_as_contracted
+  summary: Salon owner disputes incomplete website work
+
+# Foreigner Customer Type (5 personas)
+- name: Henrik Johansson
+  customer_type: Foreigner
+  description: Henrik is a 33-year-old Swedish software engineer on a work visa in
+    the US. He was charged in USD for a purchase made in Sweden at a much worse exchange
+    rate than he should have received.
+  personality: Analytical and numbers-focused, notices currency discrepancies quickly.
+    Polite but persistent about financial accuracy. Understands exchange rates well.
+  scenario: "Henrik purchased €450 worth of furniture from a Swedish retailer while
+    visiting home. His Chase Sapphire charged him $520 USD when the rate should have
+    been $485. The merchant used dynamic currency conversion without asking. He wants
+    to dispute the $35 overcharge."
+  dispute_reason: unfair_exchange_rate
+  summary: Swedish expat disputes currency conversion markup
+
+- name: Yuki Tanaka
+  customer_type: Foreigner
+  description: Yuki is a 29-year-old Japanese graduate student who ordered specialty
+    ingredients from Japan. She was charged international fees despite the merchant
+    claiming free international shipping.
+  personality: Quiet and methodical, carefully reads policies. Feels misled when terms
+    aren't honored. Provides screenshots and documentation as proof.
+  scenario: "Yuki ordered ¥28,000 ($190 USD) of specialty tea from a Japanese vendor
+    advertising 'free worldwide shipping.' Her Chase card was charged an additional
+    $45 'international processing fee' not mentioned anywhere. The vendor claims it's
+    standard. She wants to dispute the hidden fee."
+  dispute_reason: hidden_international_fees
+  summary: Japanese student disputes undisclosed international fees
+
+- name: Mohammed Al-Rashid
+  customer_type: Foreigner
+  description: Mohammed is a 42-year-old Emirati businessman traveling frequently between
+    Dubai and the US. A hotel in London charged him twice due to currency confusion
+    - once in GBP and once in USD for the same stay.
+  personality: Experienced traveler, sophisticated about international transactions.
+    Courteous but expects professional resolution. Values efficiency.
+  scenario: "Mohammed stayed at a London hotel and was charged £380 at checkout. Later,
+    another charge of $495 USD appeared on his Chase Sapphire Reserve for the same
+    dates. The hotel claims it's two different charges, but he only stayed once. He
+    wants to dispute the duplicate."
+  dispute_reason: international_duplicate_charge
+  summary: Emirates businessman charged twice different currencies
+
+- name: Ana Silva
+  customer_type: Foreigner
+  description: Ana is a 31-year-old Brazilian designer who relocated to the US for
+    work. She paid for Portuguese language tutoring services online but the instructor
+    never showed up for sessions.
+  personality: Friendly and optimistic but frustrated by being ghosted. Language barrier
+    makes disputes slightly stressful. Appreciates clear, simple explanations.
+  scenario: "Ana prepaid $240 for 8 online Portuguese tutoring sessions through TutorConnect
+    to maintain her language skills. The tutor conducted the first session, then never
+    showed up for the remaining 7. The platform says they're not responsible. She wants
+    to dispute the unfulfilled portion on her Chase Freedom."
+  dispute_reason: abandoned_service
+  summary: Brazilian expat disputes ghost tutor sessions
+
+- name: Raj Kapoor
+  customer_type: Foreigner
+  description: Raj is a 36-year-old Indian IT consultant in the US on H1B visa. He
+    ordered cricket equipment from an Indian vendor who charged him but never shipped,
+    claiming export restrictions that don't actually exist.
+  personality: Tech-professional and research-oriented, fact-checks vendor claims.
+    Patient but determined to resolve issues properly. Comfortable navigating bureaucracy.
+  scenario: "Raj ordered $385 of cricket gear from IndianSportsWorld to join a local
+    cricket club. After charging his Chase Sapphire, the vendor claimed US export restrictions
+    prevent shipping and won't refund. Raj verified no such restrictions exist. He
+    wants to dispute the charge for the unshipped order."
+  dispute_reason: false_restriction_claim
+  summary: Indian consultant disputes fake export restriction excuse

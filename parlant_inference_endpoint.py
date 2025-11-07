@@ -124,7 +124,7 @@ class ParlantInferenceEndpoint:
         }
 
         try:
-            response = requests.post(url, json=payload, timeout=30)
+            response = requests.post(url, json=payload, timeout=60)  # Increased from 30s
             response.raise_for_status()
             session_data = response.json()
             self.session_id = session_data["id"]
@@ -157,7 +157,7 @@ class ParlantInferenceEndpoint:
         }
 
         try:
-            response = requests.post(url, json=payload, timeout=30)
+            response = requests.post(url, json=payload, timeout=60)  # Increased from 30s
             response.raise_for_status()
             event_data = response.json()
             return event_data["offset"]
