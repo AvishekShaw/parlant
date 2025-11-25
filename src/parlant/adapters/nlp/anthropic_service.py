@@ -271,8 +271,8 @@ Please set ANTHROPIC_API_KEY in your environment before running Parlant.
 
     @override
     async def get_schematic_generator(self, t: type[T]) -> AnthropicAISchematicGenerator[T]:
-        # Changed to use Haiku for cost efficiency - was burning through credits with Opus/Sonnet
-        return Claude_Haiku_3_5[t](self._logger, self._meter)  # type: ignore
+        # Temporarily using Sonnet 3.5 to test quality - Haiku was producing poor responses
+        return Claude_Sonnet_3_5[t](self._logger, self._meter)  # type: ignore
 
     @override
     async def get_embedder(self) -> Embedder:

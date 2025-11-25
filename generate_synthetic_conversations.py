@@ -199,7 +199,7 @@ class SyntheticConversationPipeline:
         base_url: str = "http://localhost:8800",
         model_id: str = "claude-3-5-haiku-20241022",  # Default to cost-efficient model
         max_conversation_turns: int = 15,
-        timeout: int = 120,
+        timeout: int = 300,  # Increased for agent processing time
     ):
         self.personas_path = Path(personas_path)
         self.output_dir = Path(output_dir)
@@ -234,7 +234,8 @@ In those cases, do your best to infer the information as opposed to tediously as
         """Load financial personas from YAML file."""
         with open(self.personas_path, 'r') as f:
             data = yaml.safe_load(f)
-        return data['users']
+        # TEMP: Only use first 1 persona to test Sonnet quality
+        return data['users'][:1]
 
     def generate_all_conversations(self, server: ParlantServerManager) -> List[Conversation]:
         """
@@ -440,7 +441,7 @@ async def main():
         output_dir=output_dir,
         model_id="claude-3-5-haiku-20241022",  # Cost-efficient model
         max_conversation_turns=15,
-        timeout=120,
+        timeout=300,  # Increased for agent processing time
     )
 
     # Start Parlant server and generate conversations

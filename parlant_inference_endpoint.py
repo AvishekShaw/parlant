@@ -47,7 +47,7 @@ class ParlantInferenceEndpoint:
     base_url: str
     agent_id: str
     customer_id: str
-    timeout: int = 120  # Polling timeout in seconds (agent may need time for retries)
+    timeout: int = 300  # Polling timeout in seconds (agent may need time for retries and initial processing)
     poll_interval: float = 2.0  # Poll every 2 seconds
 
     # Session state (managed internally)
@@ -124,7 +124,7 @@ class ParlantInferenceEndpoint:
         }
 
         try:
-            response = requests.post(url, json=payload, timeout=60)  # Increased from 30s
+            response = requests.post(url, json=payload, timeout=180)  # Increased to 180s for session setup
             response.raise_for_status()
             session_data = response.json()
             self.session_id = session_data["id"]
@@ -157,7 +157,7 @@ class ParlantInferenceEndpoint:
         }
 
         try:
-            response = requests.post(url, json=payload, timeout=60)  # Increased from 30s
+            response = requests.post(url, json=payload, timeout=180)  # Increased to 180s - agent needs time for first message processing
             response.raise_for_status()
             event_data = response.json()
             return event_data["offset"]
@@ -202,7 +202,7 @@ class ParlantInferenceEndpoint:
             params = {"offset": current_offset + 1}
 
             try:
-                response = requests.get(url, params=params, timeout=10)
+                response = requests.get(url, params=params, timeout=120)  # Increased to 120s - agent may retry multiple LLM calls
                 response.raise_for_status()
                 events = response.json()
 
@@ -216,11 +216,16 @@ class ParlantInferenceEndpoint:
                     self.last_event_offset = event["offset"]
                     current_offset = event["offset"]
 
-                # Look for AI agent message
+                # Look for AI agent message (but skip preambles)
                 if (event.get("kind") == "message" and
                     event.get("source") == "ai_agent"):
 
-                    # Message content can be in data.message (as string) or data.message.content
+                    # Check if this is a preamble - skip it
+                    event_tags = event.get("data", {}).get("tags", [])
+                    if "__preamble__" in event_tags:
+                        continue  # Skip preamble, wait for actual response
+
+                    # This is the actual response - return it
                     message_data = event.get("data", {}).get("message")
                     if isinstance(message_data, str):
                         return message_data

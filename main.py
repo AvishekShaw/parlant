@@ -103,7 +103,7 @@ async def main() -> None:
                 IMPORTANT: Sometimes a user will provide certain information implicitly, such as saying "that one", while referring to certain details.
                 In those cases, do your best to infer the information as opposed to tediously asking/seeking confirmation for the specifics explicitly.
                 """),
-            composition_mode=p.CompositionMode.STRICT,
+            composition_mode=p.CompositionMode.FLUID,  # Changed from STRICT to allow dynamic response generation
         )
 
         dispute_transaction_journey = await dispute_transaction.create_journey(
